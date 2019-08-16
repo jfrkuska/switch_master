@@ -1,0 +1,119 @@
+{
+	"switches" : [
+		{ "ttySwitchLvl1" : [
+			{ "pin_name": "D2",
+			  "active": "A_LO",
+			  "alias": "1A"
+			},
+			{ "pin_name": "D3",
+			  "active": "A_LO",
+			  "alias": "1B"
+			},
+			{ "pin_name": "D4",
+			  "active": "A_LO",
+			  "alias": "1C"
+			},
+			{ "pin_name": "D5",
+			  "active": "A_LO",
+			  "alias": "1D"
+			},
+			{ "pin_name": "D6",
+			  "active": "A_LO",
+			  "alias": "1E"
+			},
+			{ "pin_name": "D7",
+			  "active": "A_LO",
+			  "alias": "1F"
+			},
+			{ "pin_name": "D8",
+			  "active": "A_LO",
+			  "alias": "1G"
+			},
+			{ "pin_name": "D9",
+			  "active": "A_LO",
+			  "alias": "1H"
+			}
+		]},
+		{"ttySwitchLvl2" : [
+			{ "pin_name": "D2",
+			  "active": "A_LO",
+			  "alias": "2A"},
+			{ "pin_name": "D3",
+			  "active": "A_LO",
+			  "alias": "2B"},
+			{ "pin_name": "D4",
+			  "active": "A_LO",
+			  "alias": "2C"},
+			{ "pin_name": "D5",
+			  "active": "A_LO",
+			  "alias": "2D"},
+			{ "pin_name": "D6",
+			  "active": "A_LO",
+			  "alias": "2E"},
+			{ "pin_name": "D7",
+			  "active": "A_LO",
+			  "alias": "2F"},
+			{ "pin_name": "D8",
+			  "active": "A_LO",
+			  "alias": "2G"},
+			{ "pin_name": "D9",
+			  "active": "A_LO",
+			  "alias": "2H"}
+		]},
+		{"ttySwitchLvl3" : [
+			{ "pin_name": "D2",
+			  "active": "A_HI",
+			  "alias": "3A"},
+			{ "pin_name": "D3",
+			  "active": "A_HI",
+			  "alias": "3B"},
+			{ "pin_name": "D4",
+			  "active": "A_HI",
+			  "alias": "3C"}
+		]},
+		{"ttySwitchLvl4" : [
+			{ "pin_name": "D2",
+			  "active": "A_LO",
+			  "alias": "4A"},
+			{ "pin_name": "D3",
+			  "active": "A_LO",
+			  "alias": "4B"},
+			{ "pin_name": "D4",
+			  "active": "A_LO",
+			  "alias": "4C"},
+			{ "pin_name": "D5",
+			  "active": "A_LO",
+			  "alias": "4D"},
+			{ "pin_name": "D6",
+			  "active": "A_LO",
+			  "alias": "4E"},
+			{ "pin_name": "D7",
+			  "active": "A_LO",
+			  "alias": "4F"},
+			{ "pin_name": "D8",
+			  "active": "A_LO",
+			  "alias": "4G"},
+			{ "pin_name": "D9",
+			  "active": "A_LO",
+			  "alias": "4H"}
+		]}
+	],
+	"boards": [
+		{ "name": "psu_test",
+		  "switch": "",
+		  "dependencies": ["12V_0","5V_0","5V_1"]
+		},
+		{ "name": "12V_0",
+		  "switch": "3A",
+		  "dependencies": [] 
+		},
+		{ "name": "5V_0",
+		  "switch": "3B",
+		  "dependencies": [] 
+		},
+		{ "name": "5V_1",
+		  "switch": "3C",
+		  "dependencies": [] 
+		}
+	]
+}
