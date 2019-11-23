@@ -113,6 +113,10 @@ def process_cmd(cmd):
 			set_pin(board_dict[cmds[0]]["switch"], "OFF")
 			time.sleep(1)
 			set_pin(board_dict[cmds[0]]["switch"], "ON")
+		elif cmds[1] == "TOGGLE":
+			set_pin(board_dict[cmds[0]]["switch"], "ON")
+			time.sleep(1)
+			set_pin(board_dict[cmds[0]]["switch"], "OFF")
 		else:
 			return "invalid switch command"
 	else:
