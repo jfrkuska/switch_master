@@ -65,7 +65,9 @@ def list_cmds():
 def list_boards():
 	output = ""
 	for board in board_dict:
-		output += board + "\r\n"
+		output += " dependencies:\r\n"
+		for dependency in board_dict[board]["dependencies"]:
+			output += "  " + dependency + "\r\n"
 	return output
 	
 
@@ -77,7 +79,7 @@ def process_cmd(cmd):
 			reload()
 			return "reloading config file"
 		elif cmds[0] == "LIST":
-			print("Listing available boards")
+			print("Listing available boards and related information")
 			return list_boards()
 		elif cmds[0] == "HELP":
 			print("Available Commands")
