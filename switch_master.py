@@ -65,6 +65,10 @@ def list_cmds():
 def list_boards():
 	output = ""
 	for board in board_dict:
+		output += board + "\r\n"
+		output += " capabilities:\r\n"
+		for capability in board_dict[board]["capabilities"]:
+			output += "  " + capability + "\r\n"
 		output += " dependencies:\r\n"
 		for dependency in board_dict[board]["dependencies"]:
 			output += "  " + dependency + "\r\n"
@@ -79,7 +83,7 @@ def process_cmd(cmd):
 			reload()
 			return "reloading config file"
 		elif cmds[0] == "LIST":
-			print("Listing available boards and related information")
+			print("Listing available boards and capabilities")
 			return list_boards()
 		elif cmds[0] == "HELP":
 			print("Available Commands")
@@ -97,7 +101,7 @@ def process_cmd(cmd):
 		dep_list = []
 	
 	print("Board " + cmds[0] + " has dep list of " + str(dep_list))
-	if cmds[0] in board_dict:
+	if cmds[0] in board_dict and cmds[1] in board_dict[cmds[0]]["capabilities"]:
 		if cmds[1] == "ON":
 			for switch in dep_list:
 				set_pin(board_dict[switch]["switch"], cmds[1])
@@ -225,7 +229,7 @@ def reload():
 
 		# read board configuration
 		for switch in switch_datastore["boards"]:
-			board_dict[switch["name"]] = { "switch": switch["switch"], "dependencies": switch["dependencies"] }
+			board_dict[switch["name"]] = { "switch": switch["switch"], "dependencies": switch["dependencies"], "capabilities": switch["capabilities"] }
 
 
 # telnet server

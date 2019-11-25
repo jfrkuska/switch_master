@@ -101,7 +101,8 @@
 	"boards": [
 		{ "name": "psu_test",
 		  "switch": "",
-		  "dependencies": ["12V_0","5V_0","5V_1"]
+		  "dependencies": ["12V_0","5V_0","5V_1"],
+		  "capabilities": ["ON","OFF"]
 		},
 		{ "name": "12V_0",
 		  "switch": "3A",
