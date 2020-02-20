@@ -146,7 +146,7 @@ class chatServer(threading.Thread):
 			data = self.socket.recv(1024)
 			if not data:
 				break
-			output = process_cmd(data) + "OK\r\n"
+			output = ">" + process_cmd(data) + "\r\n"
 			self.socket.send(output)
 		self.socket.close()
 		print('%s:%s disconnected.' % self.address)
