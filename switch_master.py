@@ -1,5 +1,20 @@
 #!/usr/bin/python
 
+#    Copyright 2019 Joshua Frkuska
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 # This software manages a bunch of switches and power supplies controlled via serial port.
 # It has two main functions. The first is to listen to udev 'add' events and determine
 # if any of the switches it monitors has been plugged in. If one has been plugged in, it
