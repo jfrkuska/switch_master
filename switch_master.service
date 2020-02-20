@@ -1,0 +1,14 @@
+[Unit]
+Description=Switch Master
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+# enter an appropriate system user name to execute this program as
+User=enter_system_user_name
+ExecStart=/usr/bin/python /usr/share/switch_master/switch_master.py
+StandardInput=none
+
+[Install]
+WantedBy=multi-user.target

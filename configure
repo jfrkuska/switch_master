@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This script installs the switch_master service to systemd, reloads the daemon
+# and starts the switch_master service. It is used to quickly test changes to the
+# python script and/or service.
+
+sudo install -v -D switch_master.json /usr/share/switch_master/switch_master.json
+sudo install -v switch_master.py /usr/share/switch_master/switch_master.py
+sudo install -v -m 644 switch_master.service /etc/systemd/system/switch_master.service
+sudo systemctl daemon-reload
+sudo systemctl stop switch_master.service
+sudo systemctl start switch_master.service
+sleep 1
+sudo systemctl status switch_master.service
